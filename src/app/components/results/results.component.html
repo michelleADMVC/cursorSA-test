@@ -1,0 +1,52 @@
+<div *ngIf="isEmpty then hasNoResults else hasResults"></div>
+<ng-template #hasNoResults>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sin resultados</th>
+            </tr>
+        </thead>
+    </table>
+</ng-template>
+<ng-template #hasResults>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Rut</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Comuna</th>
+              <th scope="col">Direccion</th>
+              <th scope="col">Calle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let person of results.personas">
+                <td>
+                    {{person.nombre}}
+                </td>
+                <td>
+                    {{person.apellido}}
+                </td>
+                <td>
+                    {{rutValidator(person.rut)}}
+                </td>
+                <td>
+                    {{phoneValidator(person.telefono)}}
+                </td>
+                <td>
+                    {{person.direccion.comuna.nombre}}
+                </td>
+                <td>
+                    {{person.direccion.calle}}
+                </td>
+                <td>
+                    {{person.direccion.numero}}
+                </td>
+
+            </tr>
+          </tbody>
+      </table>
+   
+</ng-template>

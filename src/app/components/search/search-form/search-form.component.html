@@ -1,0 +1,23 @@
+<div>
+    <form [formGroup]="searchForm"(ngSubmit)="onSubmit()">
+        <label>
+          Nombre:
+          <input class="border" type="text" formControlName="firstName">
+        </label>
+        <label class="ml-3">
+          Apellido:
+          <input class="border"type="text" formControlName="lastName">
+        </label>
+        <label class="ml-3">
+          Region:
+          <select class="border"type="text" formControlName="region">
+            <option default value="0">Todas</option>
+            <option value="1">Arica y Parinacota</option>
+            <option value="2">Valparaiso</option>
+            <option value="3">Del Biobio</option>
+            <option value="4">Metropolitana</option>
+          </select>
+        </label>
+        <button class="btn ml-3 btn-success" type="submit">Buscar</button>
+      </form>
+</div>
